@@ -16,11 +16,11 @@ df = pd.concat(frames, ignore_index = True)
 
 df.columns = list(column_names)
 
-index_constituents = df[["Trade Date", "Stock\rName", "Closing\rPrice", "Weighting\r(%)"]]
+index_constituents = df[["Trade Date", "Stock\rName", "Stock Code", "Weighting\r(%)"]]
 
 index_constituents.rename(columns={"Trade Date":"date", 
                                "Stock\rName":"index_name", 
-                               "Closing\rPrice":"ticker", 
+                               "Stock Code":"ticker", 
                                "Weighting\r(%)":"weighting"},
                                 inplace = True)
 
