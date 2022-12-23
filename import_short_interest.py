@@ -1,6 +1,6 @@
 import pandas as pd
 import sqlalchemy
-from functions import convert_and_insert
+from functions import convert_and_insert_si
 
 
 url_git = "https://github.com/mchenai1121/mchenai/raw/main/Short_Position_Reporting_Aggregated_Data_20221202.csv"
@@ -11,5 +11,4 @@ engine = sqlalchemy.create_engine(conn_string)
 
 df = pd.read_csv(url_git)
 
-convert_and_insert(df)
-
+convert_and_insert_si(df, "short interest", "market_data")
